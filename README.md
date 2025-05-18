@@ -6,6 +6,9 @@ The Simple Code Snippet Generator is an AI agent designed to quickly convert nat
 
 ![image](https://github.com/user-attachments/assets/96b20ef1-c7bd-4511-9b95-d753ffd40959)
 
+![image](https://github.com/user-attachments/assets/f3fce145-2ac6-4d79-a358-22e7770a8948)
+
+![image](https://github.com/user-attachments/assets/4afeb6d3-bea7-4a71-8c2f-9f749fb70476)
 
 Detailed Description:
 
