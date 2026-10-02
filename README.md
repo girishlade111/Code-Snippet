@@ -1,17 +1,58 @@
-# Code-Snippet
-Code Snippet
-Brief Description:
+# Code Snippet Generator
 
-The Simple Code Snippet Generator is an AI agent designed to quickly convert natural language requests into basic, ready-to-use code snippets across common web development languages and frameworks, helping developers save time on routine coding tasks.
+An AI-powered web app that converts natural-language requests into ready-to-use code snippets across common languages and frameworks — describe what you want, pick a language, and get a well-formatted snippet with syntax highlighting. Built with React + Vite + Tailwind CSS.
 
-![image](https://github.com/user-attachments/assets/96b20ef1-c7bd-4511-9b95-d753ffd40959)
+## Features
 
-![image](https://github.com/user-attachments/assets/f3fce145-2ac6-4d79-a358-22e7770a8948)
+- Natural-language to code-snippet generation (powered by Google Gemini API)
+- 12 supported languages: JavaScript, TypeScript, React, HTML, CSS, Node.js, Express.js, Python, Django, MongoDB, MySQL, Firebase
+- Syntax-highlighted output with one-click copy to clipboard
+- Dark / light theme toggle (follows system preference, saved in localStorage)
+- Graceful offline fallback snippets when the API is unavailable
+- Fully client-side, responsive UI
 
-![image](https://github.com/user-attachments/assets/4afeb6d3-bea7-4a71-8c2f-9f749fb70476)
+## Tech Stack
 
-Detailed Description:
+- React 18 + TypeScript + Vite 5
+- Tailwind CSS (class-based dark mode)
+- lucide-react icons, react-syntax-highlighter
 
-The Simple Code Snippet Generator is a focused AI-powered tool specifically engineered to assist developers by rapidly generating basic code snippets based on simple, clear instructions provided in plain language. Leveraging your expertise in languages and frameworks such as JavaScript (including ES6+), React.js, Node.js, Express.js, Python with Django, HTML5, CSS3, and database interactions with MongoDB, Firebase, or MySQL, this agent is capable of producing foundational code blocks. This includes generating basic function structures, boilerplate for common components (like a functional React component), simple routing examples in Node.js/Express or Django, fundamental database query syntax, or standard HTML/CSS patterns. The agent prioritizes generating code that is correct, easy to understand, and properly formatted within a code block, often with basic syntax highlighting. It acts as a helpful utility for quickly recalling syntax, generating starting points for small tasks, or providing examples of common coding patterns, making it an excellent component for a multi-tool website focused on developer productivity. Its simplicity lies in its focus on generating snippets rather than complex applications, ensuring fast and reliable results for everyday coding needs.
+## Quick Start
 
-![image](https://github.com/user-attachments/assets/48faafb8-9768-4d3a-a2b0-f9d0e8b4c08a)
+```bash
+npm install
+npm run dev      # start dev server
+npm run build    # production build -> dist/
+```
+
+The app calls the Gemini API from `src/snippets.ts`. If you fork this, replace the API key with your own (see note below).
+
+## Project Structure
+
+```
+.
+├── index.html
+├── src/
+│   ├── App.tsx                  # Main generator UI
+│   ├── main.tsx                 # Entry point
+│   ├── index.css                # Tailwind styles
+│   ├── languages.ts             # Supported language list
+│   ├── snippets.ts              # Gemini API + fallback snippets
+│   ├── types/index.ts           # Language / CodeSnippet types
+│   ├── hooks/useTheme.tsx       # Dark-mode theme context
+│   └── components/              # Header, Footer, LanguageSelector, CodeSnippetDisplay
+├── Simple Code Snippet Generator.zip  # Original project archive
+└── README.md
+```
+
+## Deploy
+
+Static build (`npm run build` → `dist/`). Currently deployed on Cloudflare Pages — see the homepage URL in this repo's "About" section.
+
+## Security note
+
+The Gemini API key shipped in `src/snippets.ts` is a client-side key and is publicly visible in this repo. If you fork or reuse this project, **rotate the key and use your own** — never commit a production key.
+
+---
+
+**Built by [Girish Lade](https://ladestack.in)** — part of the [LadeStack](https://ladestack.in) collection of free tools.
